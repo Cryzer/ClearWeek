@@ -5,6 +5,8 @@
 ## Version: 0.14.1
 ## IconTexture: Interface\AddOns\ClearWeek\Media\Toggle
 ## Category: Quests
+## X-Curse-Project-ID: 1796680
+## X-Wago-ID: bGoYX160
 ## SavedVariables: ClearWeekDB
 ## SavedVariablesPerCharacter: ClearWeekCharDB
 
