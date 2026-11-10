@@ -27,7 +27,8 @@ jobs:
           git merge-base --is-ancestor "$GITHUB_SHA" refs/remotes/origin/main
 
       - name: Tag musi zgadzać się z wersją w TOC
-        run: grep -qx "## Version: ${GITHUB_REF_NAME#v}" <(tr -d '\r' < addon/ClearWeek.toc)
+        run: |
+          grep -qx "## Version: ${GITHUB_REF_NAME#v}" <(tr -d '\r' < addon/ClearWeek.toc)
 
       - name: Changelog tylko dla tej wersji
         run: |
