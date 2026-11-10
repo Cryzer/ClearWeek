@@ -7,7 +7,7 @@ ClearWeek answers one question: *what is left this week, and where do I go next?
 ## What it does
 
 - **One list, grouped by place.** Silvermoon City, Silvermoon Court, Amani Tribe, Hara'ti, The Singularity and the rest. The group for your current zone moves to the top.
-- **Click to go.** Click a row and the game's own arrow points to the quest giver, the quest objective or the turn-in.
+- **Click to go.** Click a row and the game sets a waypoint on the quest giver, the quest objective or the turn-in.
 - **Reads the game, saves no progress.** Quest state comes straight from the game on every refresh, so there is nothing to set up and nothing to tick off by hand.
 - **Stays out of the way.** At rest it is a few lines next to the quest tracker: where you are, the next step and the time to the weekly reset. Hover to see the whole week.
 - **Disappears when you are busy.** Hidden in combat, in dungeons, raids, delves and PvP, and back afterwards.
@@ -41,7 +41,7 @@ Other places use dimmer shades of the same colours.
 
 ## Controls
 
-- **Click a row** — arrow to that quest.
+- **Click a row** — waypoint to that quest.
 - **Right-click a row** — hide it for this week, or always.
 - **Click the icon**, or type `/cw` — show or hide the list.
 - **Right-click the icon** — restore hidden rows, unlock the position to drag the list, change the scale, or reset the position.
