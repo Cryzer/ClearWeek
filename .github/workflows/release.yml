@@ -1,0 +1,36 @@
+name: Release
+
+# Tag vX.Y.Z buduje paczkę. Bez sekretów CF_API_KEY i WAGO_API_TOKEN oraz ID projektów w TOC
+# powstaje tylko wydanie na GitHubie.
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Tag musi zgadzać się z wersją w TOC
+        run: grep -qx "## Version: ${GITHUB_REF_NAME#v}" <(tr -d '\r' < addon/ClearWeek.toc)
+
+      - name: Changelog tylko dla tej wersji
+        run: |
+          awk -v head="## ${GITHUB_REF_NAME#v}" 'BEGIN{f=0} {sub(/\r$/,"")} $0==head{f=1;next} f && /^## /{exit} f{print}' CHANGELOG.md > /tmp/notes.md
+          test -s /tmp/notes.md
+          cp /tmp/notes.md CHANGELOG.md
+
+      - uses: BigWigsMods/packager@01e8631a69c69d7654c788d152630d5fed9e3812 # v2.7.0
+        env:
+          CF_API_KEY: ${{ secrets.CF_API_KEY }}
+          GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+          WAGO_API_TOKEN: ${{ secrets.WAGO_API_TOKEN }}

@@ -1,0 +1,34 @@
+## Interface: 120105, 120107
+## Title: ClearWeek
+## Notes: Weekly quests grouped by place.
+## Author: Cryzer
+## Version: 0.14.1
+## IconTexture: Interface\AddOns\ClearWeek\Media\Toggle
+## Category: Quests
+## SavedVariables: ClearWeekDB
+## SavedVariablesPerCharacter: ClearWeekCharDB
+
+Core.lua
+Safe.lua
+Locale.lua
+Store\Settings.lua
+Store\Hidden.lua
+Data\Quests.lua
+Rules\Conditions.lua
+Rules\Detectors.lua
+Model\Sources.lua
+Model\Maps.lua
+Model\Offers.lua
+Model\Schedule.lua
+Model\QuestSource.lua
+Model\Route.lua
+Actions\Guide.lua
+UI\Theme.lua
+UI\Row.lua
+UI\Hint.lua
+UI\Place.lua
+UI\Menu.lua
+UI\Lines.lua
+UI\Route.lua
+Events.lua
+Commands.lua

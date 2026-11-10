@@ -1,0 +1,11 @@
+# Paczka dla CurseForge i Wago (BigWigsMods/packager). Pliki gry leżą w addon/,
+# a w paczce mają być bezpośrednio w folderze ClearWeek.
+package-as: ClearWeek
+
+move-folders:
+  ClearWeek/addon: ClearWeek
+
+manual-changelog: CHANGELOG.md
+
+ignore:
+  - README.md

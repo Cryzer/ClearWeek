@@ -1,0 +1,11 @@
+dist/
+__pycache__/
+*.pyc
+.superpowers/
+
+# Wewnętrzne, tylko lokalnie
+docs/
+tests/
+tools/
+AGENTS.md
+requirements-dev.txt
