@@ -2,7 +2,7 @@
 local _, A = ...
 
 A.L = {
-    PAUSED = "paused after an error, type /cw for details.",
+    PAUSED = "paused after an error, type /clearweek for details.",
     STATUS_FAILED = "paused after an error",
     STATUS_FUTURE = "newer saved data, addon disabled",
     HINT_GO = "Click: waypoint to %s",

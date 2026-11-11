@@ -43,7 +43,7 @@ Other places use dimmer shades of the same colours.
 
 - **Click a row** — waypoint to that quest.
 - **Right-click a row** — hide it for this week, or always.
-- **Click the icon**, or type `/cw` — show or hide the list.
+- **Click the icon**, or type `/clearweek` — show or hide the list.
 - **Right-click the icon** — restore hidden rows, unlock the position to drag the list, change the scale, or reset the position.
 
 By default the list sits beside the quest tracker and follows it when you move the tracker in Edit Mode. On the left half of the screen the layout mirrors itself.

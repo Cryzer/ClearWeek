@@ -42,7 +42,7 @@ A.Theme = {
     shadeAlpha = 0.84,
     -- Miękkie brzegi tła: lewa część wygasa przez całą resztę szerokości, prawa, górna i dolna krótko.
     fadeSolid = 130, fadeRight = 14, fadeY = 18, fadeStep = 2,
-    -- Przycisk jak /cw przy lewym górnym rogu trackera właściciela (pomiar 2026-11-08: róg 262 px od
+    -- Przycisk jak /clearweek przy lewym górnym rogu trackera właściciela (pomiar 2026-11-08: róg 262 px od
     -- prawej i 258 px od góry). Stoi między kropką bieżącej grupy a nagłówkiem „Quests” trackera
     -- (zrzut właściciela 2026-11-08).
     -- Ikona: Obchód w miniaturze (tools/icon.py, wariant B wybrany przez właściciela).

@@ -1,6 +1,6 @@
--- Komenda /cw: pokazuje albo chowa Obchód, jak klik w ikonę. Innych komend nie ma (właściciel
+-- Komenda /clearweek: pokazuje albo chowa Obchód, jak klik w ikonę. Innych komend nie ma (właściciel
 -- 2026-11-10): reszta jest w menu ikony (UI/Menu.lua). Gdy addon stoi po błędzie albo przez
--- nowszy zapis, widoku nie ma, więc /cw podaje stan potrzebny do zgłoszenia błędu.
+-- nowszy zapis, widoku nie ma, więc /clearweek podaje stan potrzebny do zgłoszenia błędu.
 local _, A = ...
 local L = A.L
 
@@ -23,7 +23,7 @@ function commands.GuideRow(row, stop, quiet)
     A:Print(GO_MESSAGES[how]:format(name, stop.name))
 end
 
-SLASH_CLEARWEEK1 = "/cw"
+SLASH_CLEARWEEK1 = "/clearweek"
 SlashCmdList.CLEARWEEK = function()
     if A.failed or A.future then status(); return end
     A:Run(function() A.View:Toggle() end)

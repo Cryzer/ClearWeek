@@ -49,7 +49,7 @@ function A:Initialize()
     self.db, self.char = db, char
 end
 
--- Stan, który /cw podaje, gdy addon stoi.
+-- Stan, który /clearweek podaje, gdy addon stoi.
 function A:Status()
     if self.failed then return self.L.STATUS_FAILED end
     if self.future then return self.L.STATUS_FUTURE end

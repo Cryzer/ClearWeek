@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.14.2
+
+- Replaced the addon command `/cw` with `/clearweek` to avoid intercepting WoW's character whisper command when choosing Whisper from a context menu.
+
 ## 0.14.1
 
 First public version.

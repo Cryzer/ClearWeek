@@ -135,7 +135,7 @@ function handlers.leave()
     end)
 end
 
--- Przycisk z ikoną Obchodu: lekko przygaszony, pełny po najechaniu. Klik działa jak /cw.
+-- Przycisk z ikoną Obchodu: lekko przygaszony, pełny po najechaniu. Klik działa jak /clearweek.
 local function createToggle()
     local button = CreateFrame("Button", nil, UIParent)
     button:SetSize(T.toggleSize, T.toggleSize)
@@ -145,7 +145,7 @@ local function createToggle()
     icon:SetAllPoints()
     icon:SetTexture(T.toggleIcon)
     button.icon = icon
-    -- Lewy przycisk jak /cw, prawy otwiera menu: ukryte pozycje, miejsce i skala.
+    -- Lewy przycisk jak /clearweek, prawy otwiera menu: ukryte pozycje, miejsce i skala.
     button:SetScript("OnClick", function(self, mouse)
         A:Run(function()
             if mouse == "RightButton" then A.Menu.Toggle(self) else View:Toggle() end
@@ -515,7 +515,7 @@ function View:SetPaused(reason, on)
     end
     local was = self.paused[reason]
     self.paused[reason] = nil
-    -- Przycisk wraca od razu po ostatniej pauzie, nawet gdy Obchód jest schowany przez /cw.
+    -- Przycisk wraca od razu po ostatniej pauzie, nawet gdy Obchód jest schowany przez /clearweek.
     if self.toggle then self.toggle:SetShown(not isPaused()) end
     if isPaused() or not self.started or not (was or self.dirty) then return end
     self.dirty = false
