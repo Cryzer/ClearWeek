@@ -89,7 +89,10 @@ A.Data = {
         {key = "abundance", stop = "amani", title = "Abundant Offerings", who = "Chel the Chip",
             -- Bieżące Abundance ze znacznika wydarzenia (np. „Abundance: Herbalism Grotto”, AreaPOI 8418 i dalsze).
             -- Grupa ze strefy znacznika (zoneStop), Amani Tribe, gdy znacznika nie widać (właściciel 2026-11-08).
-            kind = "flag", ids = {89507}, eventPrefix = "Abundance", eventMaps = {2395, 2437, 2413, 2405}, zoneStop = true, when = {level = 80}, conf = "A", src = "K L WH PL BR"},
+            kind = "flag", ids = {89507}, eventPrefix = "Abundance", eventMaps = {2395, 2437, 2413, 2405}, zoneStop = true, when = {level = 80}, conf = "A", src = "K L WH PL BR",
+            -- Miejsca Abundance w strefach do wyboru mapy (Model/Offers.lua). Punkty z wiki (projekt, sekcja 2);
+            -- Eversong zgodny z grą (pomiar 2026-11-11: 8528 na 2395 w 56.83 65.80, na 2437 w 17.49 37.98).
+            eventSites = {[2395] = {56.78, 65.79}, [2437] = {31.62, 26.14}, [2413] = {66.14, 61.69}, [2405] = {38.82, 53.31}}},
 
         -- Hara'ti
         -- Znacznik mapy „Legends of the Haranir”: AreaPOI 8423 (quest 89268) i 8463 (powtórka, 92713), tabela AreaPOI 70783.

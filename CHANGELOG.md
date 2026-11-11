@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.14.3
+
+- Abundance is listed under the faction of the zone it is in. When it was in Zul'Aman, it could show under Silvermoon Court, because the Eversong Woods map also shows its marker.
+
 ## 0.14.2
 
 - Replaced the addon command `/cw` with `/clearweek` to avoid intercepting WoW's character whisper command when choosing Whisper from a context menu.
