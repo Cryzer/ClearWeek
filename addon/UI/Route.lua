@@ -349,6 +349,8 @@ local function isPaused()
     return next(View.paused) ~= nil
 end
 
+function View:IsPaused() return isPaused() end
+
 local function hide()
     if not View.frame:IsShown() or View.hiding then return end
     View.hiding = true

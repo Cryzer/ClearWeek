@@ -41,8 +41,21 @@ function handlers.QUEST_LOG_UPDATE() A.View:RequestRefresh() end
 for event in pairs(handlers) do frame:RegisterEvent(event) end
 -- Buff Trovehunter's Bounty. UNIT_AURA gracza przychodzi przy każdym procu, więc trasę liczymy
 -- tylko, gdy zmieni się, które buffy pozycji gracz ma. Pierwszy odczyt to punkt odniesienia.
+-- Buff pojawia się albo znika tylko przy dodaniu, usunięciu albo pełnej aktualizacji, więc samo
+-- odświeżenie buffów pomijamy, jak Blizzard (EvokerEbonMightBar, gałąź live). Nieczytelne dane
+-- (sekretne przy ograniczeniu buffów) sprawdzamy jak dotąd.
+local function auraSetChanged(info)
+    if not A.Safe.Table(info) then return true end
+    if A.Safe.Field(info, "isFullUpdate") == true then return true end
+    local added = A.Safe.Table(A.Safe.Field(info, "addedAuras"))
+    local removed = A.Safe.Table(A.Safe.Field(info, "removedAuraInstanceIDs"))
+    return (added ~= nil and #added > 0) or (removed ~= nil and #removed > 0)
+end
+
 local auras
-function handlers.UNIT_AURA()
+function handlers.UNIT_AURA(_, info)
+    -- W pauzie (walka, instancja, ograniczenie) Obchód stoi, a po niej przelicza wszystko.
+    if A.View:IsPaused() or not auraSetChanged(info) then return end
     local now = A.Detectors.Auras()
     local changed = auras ~= nil and now ~= auras
     auras = now

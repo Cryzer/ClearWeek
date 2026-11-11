@@ -41,11 +41,20 @@ function kinds.flag(item, info)
     if item.aura and hasAura(item.aura) then info.done, info.active = nil, true end
 end
 
+-- Buffy pozycji. Tabela się nie zmienia, więc liczymy je raz, przy pierwszym UNIT_AURA.
+local auraIDs
+
 -- Które z buffów pozycji gracz ma teraz, jako tekst do porównania (Events.lua, UNIT_AURA).
 function Detectors.Auras()
+    if not auraIDs then
+        auraIDs = {}
+        for _, item in ipairs(A.Data.quests) do
+            if item.aura then auraIDs[#auraIDs + 1] = item.aura end
+        end
+    end
     local present = {}
-    for _, item in ipairs(A.Data.quests) do
-        if item.aura and hasAura(item.aura) then present[#present + 1] = item.aura end
+    for _, id in ipairs(auraIDs) do
+        if hasAura(id) then present[#present + 1] = id end
     end
     return table.concat(present, ",")
 end
